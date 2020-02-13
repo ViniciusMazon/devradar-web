@@ -1,46 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import './styles.css';
 
-const DevForm = ({ onSubmit }) => {
+const DevFormEdit = ({ data, onSubmit }) => {
 
-  const [github_username, setGithub_username] = useState('');
-  const [techs, setTechs] = useState('');
-  const [latitude, setLatitude] = useState('');
-  const [longitude, setLongitude] = useState('');
+  const [github_username, setGithub_username] = useState(data.github_username);
+  const [techs, setTechs] = useState(data.techs);
+  const [latitude, setLatitude] = useState(data.location.coordinates[1]);
+  const [longitude, setLongitude] = useState(data.location.coordinates[0]);
 
-  //Position
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords;
-        setLatitude(latitude);
-        setLongitude(longitude);
-      },
-      (err) => {
-        console.log(err);
-      },
-      {
-        timeout: 30000
-      }
-    );
-  }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await onSubmit({
+    await onSubmit(data._id, {
       github_username,
       techs,
       latitude,
       longitude
     });
-    setGithub_username('');
-    setTechs('');
   }
+
 
   return (
     <form onSubmit={handleSubmit}>
-      <strong>Cadastrar</strong>
+      <strong>Editar</strong>
       <div className="input-block">
         <label htmlFor="github_username">Usuário do Github</label>
         <input name="github_username" id="github_username" value={github_username} onChange={e => setGithub_username(e.target.value)} required />
@@ -64,4 +47,4 @@ const DevForm = ({ onSubmit }) => {
   )
 };
 
-export default DevForm;
+export default DevFormEdit;

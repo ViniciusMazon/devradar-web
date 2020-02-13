@@ -7,13 +7,14 @@ import './css/sidebar.css';
 import './css/Main.css';
 
 import DevForm from './components/DevForm';
+import DevFormEdit from './components/DevFormEdit';
 import DevItem from './components/DevItem';
 
 function App() {
 
   const [devs, setDevs] = useState([]);
+  const [editDevData, setEditDevData] = useState({ isEditing: false, data: {} });
 
-  //Load devs from api
   useEffect(() => {
     async function loadDevs() {
       const response = await api.get('devs');
@@ -23,24 +24,44 @@ function App() {
     loadDevs();
   }, []);
 
-  async function handleAddDev(data) {
 
+  async function deleteDev(id) {
+    await api.delete(`devs/${id}`);
+    setDevs(devs.filter(dev => dev._id !== id));
+  }
+
+  function editDev(status, dev) {
+    let content = {
+      isEditing: status,
+      data: dev
+    }
+    setEditDevData(content);
+  }
+
+  async function handleEditDev(id, data) {
+    const response = await api.put(`/devs/${id}`, data);
+    setEditDevData({ isEditing: false, data: {} })
+    setDevs([...devs.filter(dev => dev._id !== id), response.data]);
+  }
+
+  async function handleAddDev(data) {
     const response = await api.post('/devs', data);
     setDevs([...devs, response.data]);
   }
 
-  return (
+    return (
     <div id="app">
       <aside>
-        <strong>Cadastrar</strong>
-        <DevForm onSubmit={handleAddDev}/>
+        {
+          editDevData.isEditing === true ? <DevFormEdit data={editDevData.data} onSubmit={handleEditDev} /> : <DevForm onSubmit={handleAddDev} />
+        }
       </aside>
 
       <main>
         <ul>
           {
             devs.map(dev => (
-              <DevItem key={dev._id} dev={dev} />
+              <DevItem key={dev._id} dev={dev} deleteDev={deleteDev} editDev={editDev} />
             ))
           }
         </ul>

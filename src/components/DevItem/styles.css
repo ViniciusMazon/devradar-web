@@ -44,8 +44,30 @@ li.dev-item a {
   color: #8E4DFF;
   font-size: 14px;
   text-decoration: none;
+  margin-right: 40%;
 }
 
 li.dev-item a:hover {
   color: #5A2EA6;
+}
+
+li.dev-item button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: lighter;
+  margin-right: 2%;
+  height: 20px;
+  border: none;
+  background-color: #FFF;
+  text-align: center;
+  color: #BB94FF;
+  cursor: pointer;
+}
+
+li.dev-item button:hover {
+  color: #5A2EA6;
+  font-weight: bold;
+  transition: .5s;
 }
