@@ -30,7 +30,7 @@ const DevFormEdit = ({ data, onSubmit }) => {
       </div>
       <div className="input-block">
         <label htmlFor="techs">Tecnologias</label>
-        <input name="techs" id="techs" value={techs} onChange={e => setTechs((e.target.value).toLowerCase())} required />
+        <input name="techs" id="techs" value={techs} onChange={e => setTechs(e.target.value)} required />
       </div>
       <div className="input-group">
         <div className="input-block">
