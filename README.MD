@@ -22,7 +22,6 @@ O objetivo é unir desenvolvedores geograficamente próximos, filtrando os resul
 ### Minhas modificações 🔧
 * Criação da feature de editar dev
 * Criação da feature de deletar dev
-* As tecnologias cadastradas são enviadas em lower case para a API
 
 ### Utilização 🔌
 1. Suba a API do DevRadar, seguindo o passo a passo em [DevRadar-API](https://github.com/ViniciusMazon/DevRadar-API)
@@ -39,5 +38,5 @@ O objetivo é unir desenvolvedores geograficamente próximos, filtrando os resul
 ### Licença 📄
 Esse projeto está sob a licença **MIT**.
 
-**Por favor, deixe seu feedback, ele é muito importante para meu crescimento**
+**Por favor, deixe seu feedback, ele é muito importante para meu crescimento.**
 **Se gostou, não esqueça de dar uma estrela** 😆
