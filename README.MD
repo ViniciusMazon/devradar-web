@@ -24,16 +24,16 @@ O objetivo é unir desenvolvedores geograficamente próximos, filtrando os resul
 * Criação da feature de deletar dev
 
 ### Utilização 🔌
-1. Suba a API do DevRadar, seguindo o passo a passo em [DevRadar-API](https://github.com/ViniciusMazon/DevRadar-API)
+1. Suba a API do DevRadar, seguindo o passo a passo em [DevRadar-API](https://github.com/ViniciusMazon/devradar-api)
 2. Clone este repositório
 3. Instale as dependências rodando `yarn install` ou `npm install`
 4. Rode o projeto executando `yarn start` ou `npm start`
-5. Para utilizar o App siga o passo-a-passo do [DevRadar-Mobile](https://github.com/ViniciusMazon/DevRadar-Mobile)
+5. Para utilizar o App siga o passo-a-passo do [DevRadar-Mobile](https://github.com/ViniciusMazon/devradar-mobile)
 
 ### Todos repositórios 📦
-* [API](https://github.com/ViniciusMazon/DevRadar-API)
-* [Web](https://github.com/ViniciusMazon/DevRadar-Web)
-* [Mobile](https://github.com/ViniciusMazon/DevRadar-Mobile)
+* [API](https://github.com/ViniciusMazon/devradar-api)
+* [Web](https://github.com/ViniciusMazon/devradar-web)
+* [Mobile](https://github.com/ViniciusMazon/devradar-mobile)
   
 ### Licença 📄
 Esse projeto está sob a licença **MIT**.
